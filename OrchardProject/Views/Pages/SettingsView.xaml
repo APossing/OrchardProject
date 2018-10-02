@@ -1,0 +1,41 @@
+﻿<Page x:Class="OrchardProject.Views.SettingsView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:vms="clr-namespace:OrchardProject.ViewModels"
+      xmlns:local="clr-namespace:OrchardProject.Views"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SettingsView">
+    <Page.DataContext>
+        <vms:SettingsVM />
+    </Page.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="25" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+        <Button Content="Back" Grid.Row="1" Grid.Column="1" Height="20" Width="40" HorizontalAlignment="Left"
+                VerticalAlignment="Top" Command="{Binding BackButtonClick}" />
+        <TextBlock Text="Language" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Height="50" Width="100" />
+        <Button Content="English" Grid.Row="2" Grid.Column="3" Height="50" Width="100" Margin="5"
+                Background="{Binding LanguageEnglishBackground}" Command="{Binding EnglishLanguageClicked}" />
+        <Button Content="Spanish" Grid.Row="2" Grid.Column="4" Height="50" Width="100" Margin="5"
+                Background="{Binding LanguageSpanishBackground}" Command="{Binding SpanishLanguageClicked}" />
+    </Grid>
+</Page>

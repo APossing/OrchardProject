@@ -1,0 +1,33 @@
+﻿<Page x:Class="OrchardProject.Views.MainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:OrchardProject.Views"
+      xmlns:VMs="clr-namespace:OrchardProject.ViewModels"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainMenu">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="250" Grid.Row="1" Grid.Column="1">
+            <Button Content="Add Order" Command="{Binding BulkInventoryButtonClick}" Height="50" />
+            <Button Content="Order Manager" Command="{Binding OrderManagerButtonClick}" Margin="0,25,0,0" Height="50" />
+            <Button Content="Inventory Manager" Command="{Binding OrderManagerButtonClick}" Margin="0,25,0,0"
+                    Height="50" />
+            <Button Content="Return Inventory" Command="{Binding ReturnInventoryButtonClick}" Margin="0,25,0,0"
+                    Height="50" />
+            <Button Content="Settings" Command="{Binding SettingsButtonClick}" Margin="0,25,0,0" Height="50" />
+
+        </StackPanel>
+    </Grid>
+</Page>

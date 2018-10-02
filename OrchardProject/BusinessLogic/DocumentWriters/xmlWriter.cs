@@ -1,0 +1,4 @@
+﻿//    class XMLWriter:IDocumentWriter
+//    {
+//    }
+

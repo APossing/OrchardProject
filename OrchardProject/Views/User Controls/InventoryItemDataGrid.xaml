@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="OrchardProject.Views.InventoryItemDataGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:OrchardProject.Views"
+             xmlns:vm="clr-namespace:OrchardProject.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="2000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <DataGrid ItemsSource="{Binding NewItems}" HorizontalAlignment="Center" MinColumnWidth="200"
+                  AutoGenerateColumns="False" BorderBrush="Black" BorderThickness="1" CanUserDeleteRows="True"
+                  CanUserResizeRows="True" SelectedIndex="{Binding SelectedTableIndex}" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Chemical.Name}" IsReadOnly="True">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock
+                                Text="{Binding DataContext.ChemicalText, RelativeSource={RelativeSource AncestorType={x:Type local:InventoryItemDataGrid}}}" />
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding QuantityTotal}" MaxWidth="60" IsReadOnly="True">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock
+                                Text="{Binding DataContext.QuantityText, RelativeSource={RelativeSource AncestorType={x:Type local:InventoryItemDataGrid}}}" />
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Chemical.QuantityType}" MaxWidth="75" IsReadOnly="True">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock
+                                Text="{Binding DataContext.TypeText, RelativeSource={RelativeSource AncestorType={x:Type local:InventoryItemDataGrid}}}" />
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="SMW" Binding="{Binding QuantitySMWConventional}" MaxWidth="75"
+                                    IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding QuantitySMWOrganic}" MaxWidth="100" IsReadOnly="True">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock
+                                Text="{Binding DataContext.QuantitySMWOrganicText, RelativeSource={RelativeSource AncestorType={x:Type local:InventoryItemDataGrid}}}" />
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="KTW" Binding="{Binding QuantityKTWConventional}" MaxWidth="75"
+                                    IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding QuantityKTWOrganic}" MaxWidth="100" IsReadOnly="True">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock
+                                Text="{Binding DataContext.QuantityKTWOrganicText, RelativeSource={RelativeSource AncestorType={x:Type local:InventoryItemDataGrid}}}" />
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="TKM" Binding="{Binding QuantityTKM}" MaxWidth="75" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding DateTaken}" IsReadOnly="True">
+                    <DataGridTextColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock
+                                Text="{Binding DataContext.DateTakenText, RelativeSource={RelativeSource AncestorType={x:Type local:InventoryItemDataGrid}}}" />
+                        </DataTemplate>
+                    </DataGridTextColumn.HeaderTemplate>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="{Binding RemoveItemText}" Command="{Binding Path=RomoveSelectedIndexClickCommand}"
+                Grid.Column="2" Height="20" Width="50" VerticalAlignment="Top" HorizontalAlignment="Left"
+                Margin="5,0,0,0" />
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrchardProject", "OrchardProject\OrchardProject.csproj", "{DA1DC4F4-3429-4E7B-B969-BBADA1B1A93D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zMiscTests", "zMiscTests\zMiscTests.csproj", "{27D08E0C-BE9F-4572-96C2-1416D643B12C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA1DC4F4-3429-4E7B-B969-BBADA1B1A93D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA1DC4F4-3429-4E7B-B969-BBADA1B1A93D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA1DC4F4-3429-4E7B-B969-BBADA1B1A93D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA1DC4F4-3429-4E7B-B969-BBADA1B1A93D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27D08E0C-BE9F-4572-96C2-1416D643B12C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27D08E0C-BE9F-4572-96C2-1416D643B12C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27D08E0C-BE9F-4572-96C2-1416D643B12C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27D08E0C-BE9F-4572-96C2-1416D643B12C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF80CCC5-F1BF-44EB-879C-85268CC17AF1}
+	EndGlobalSection
+EndGlobal
